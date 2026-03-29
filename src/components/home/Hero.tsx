@@ -1,18 +1,37 @@
 // src/components/home/Hero.tsx
+import banner from "../../assets/banner.webp";
 
 const Hero = () => {
   return (
-    <div className="bg-[#f5e6d3] text-center py-16">
-      <p className="text-gray-600 mb-2">
-        DISCOVER QUALITY EDUCATION ANYTIME, ANYWHERE
-      </p>
+    <div
+      className="relative h-[500px] flex items-center justify-center text-center"
+      style={{
+        backgroundImage: `url(${banner})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-      <h1 className="text-5xl font-bold">
-        Empower Your Future with <br />
-        <span className="text-orange-500">Education Courses</span>
-      </h1>
+      {/* Content */}
+      <div className="relative z-10 text-white px-4 max-w-3xl">
+        <p className="mb-3 text-sm tracking-wide">
+          DISCOVER QUALITY EDUCATION ANYTIME, ANYWHERE
+        </p>
 
-      {/* <CourseSearch /> */}
+        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          Empower Your Future with <br />
+          <span className="text-orange-400">
+            Education Courses
+          </span>
+        </h1>
+
+        {/* Optional Button */}
+        <button className="mt-6 bg-orange-500 hover:bg-orange-600 px-6 py-2 rounded text-white font-medium">
+          Explore Courses
+        </button>
+      </div>
     </div>
   );
 };

@@ -1,20 +1,32 @@
 // src/pages/Login.tsx
 import { useState } from "react";
-
+import { loginAPI } from "../../services/api";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
-
+    const navigate = useNavigate();
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-    console.log(form);
-    // call API here
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+
+      try {
+          const res = await loginAPI(form);
+
+          if (res.data.status) {
+              localStorage.setItem("token", res.data.token);
+              navigate("/admin"); // redirect
+          } else {
+              alert(res.data.message);
+          }
+      } catch (err) {
+          alert("Login failed");
+      }
   };
 
   return (
