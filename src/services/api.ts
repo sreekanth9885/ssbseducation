@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://ssbsapi.academicprojects.org/",
+  baseURL: "https://ssbsapi.academicprojects.org/",
 });
 
 API.interceptors.request.use((config) => {
