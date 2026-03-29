@@ -14,9 +14,11 @@ const Navbar = () => {
     <div className="flex justify-between items-center px-6 py-4 shadow bg-white">
       
       {/* Logo */}
-      <h1 className="font-bold text-lg text-blue-700 cursor-pointer">
-        Education Society
-      </h1>
+      <NavLink
+        to={"/"}
+        className="font-bold text-lg text-blue-700 cursor-pointer">
+        SSBS Education Society
+      </NavLink>
 
       {/* Menu */}
       <ul className="flex gap-6 text-gray-700">
