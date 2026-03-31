@@ -10,9 +10,10 @@ import AdminLayout from "./components/layout/AdminLayout";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminCourses from "./pages/admin/AdminCourses";
 import AdminStudents from "./pages/admin/AdminStudents";
+import AdminStaff from "./pages/admin/AdminStaff";
+import Staff from "./pages/Staff";
 const About = () => <div className="p-6">About Page</div>;
 const Courses = () => <div className="p-6">Courses Page</div>;
-const Staff = () => <div className="p-6">Staff Page</div>;
 const Contact = () => <div className="p-6">Contact Page</div>;
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/admin/courses" element={<AdminCourses />} />
           <Route path="/admin/students" element={<AdminStudents />} />
+          <Route path="/admin/staff" element={<AdminStaff />} />
           <Route path="/admin/settings" element={<div>Settings</div>} />
         </Route>
 

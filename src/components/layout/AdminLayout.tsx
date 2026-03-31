@@ -5,6 +5,7 @@ const menuItems = [
   { name: "Dashboard", path: "/admin" },
   { name: "Courses", path: "/admin/courses" },
   { name: "Students", path: "/admin/students" },
+  { name: "Faculty", path: "/admin/staff" },
   { name: "Settings", path: "/admin/settings" },
 ];
 
