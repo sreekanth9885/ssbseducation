@@ -25,4 +25,8 @@ export const deleteCourse = (id: number) => API.delete(`/courses?id=${id}`);
 export const getStudents = () => API.get("/students");
 export const createStudent = (data: any) => API.post("/students", data);
 export const deleteStudent = (id: number) => API.delete(`/students?id=${id}`);
+export const getStaff = () => API.get("/staff");
+export const createStaff = (data: any) => API.post("/staff", data);
+export const deleteStaff = (id: number) => API.delete(`/staff?id=${id}`);
+export const updateStaff = (data: any) => API.put("/staff", data);
 export default API;
