@@ -4,7 +4,7 @@ import banner from "../../assets/banner.webp";
 const Hero = () => {
   return (
     <div
-      className="relative h-[500px] flex items-center justify-center text-center"
+      className="relative h-100 md:h-125 flex items-center justify-center text-center"
       style={{
         backgroundImage: `url(${banner})`,
         backgroundSize: "cover",

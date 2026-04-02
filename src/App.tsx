@@ -11,7 +11,10 @@ import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminCourses from "./pages/admin/AdminCourses";
 import AdminStudents from "./pages/admin/AdminStudents";
 import AdminStaff from "./pages/admin/AdminStaff";
+import Notifications from "./pages/admin/notifications/Notifications";
 import Staff from "./pages/Staff";
+import NotificationsPage from "./pages/Notifications";
+import NotificationDetail from "./pages/NotificationDetail";
 const About = () => <div className="p-6">About Page</div>;
 const Courses = () => <div className="p-6">Courses Page</div>;
 const Contact = () => <div className="p-6">Contact Page</div>;
@@ -27,6 +30,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/staff" element={<Staff />} />
+          <Route path="/notifications" element={<NotificationsPage />} />
+          <Route path="/notifications/:id" element={<NotificationDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
 
@@ -45,6 +50,7 @@ function App() {
           <Route path="/admin/courses" element={<AdminCourses />} />
           <Route path="/admin/students" element={<AdminStudents />} />
           <Route path="/admin/staff" element={<AdminStaff />} />
+          <Route path="/admin/notifications" element={<Notifications />} />
           <Route path="/admin/settings" element={<div>Settings</div>} />
         </Route>
 
