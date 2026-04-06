@@ -29,7 +29,7 @@ export default function AdminStaff() {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const [uploadingPhoto, setUploadingPhoto] = useState<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const photoUploadRef = useRef<HTMLInputElement>(null);
+  // const photoUploadRef = useRef<HTMLInputElement>(null);
 
   const [form, setForm] = useState({
     name: "",
@@ -301,7 +301,7 @@ export default function AdminStaff() {
                         className="hidden"
                         ref={(ref) => {
                           if (ref) {
-                            const uploadRef = photoUploadRef;
+                            // const uploadRef = photoUploadRef;
                             // Store ref in a map or use different approach
                           }
                         }}
