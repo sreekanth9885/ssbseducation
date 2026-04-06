@@ -15,7 +15,7 @@ import Notifications from "./pages/admin/notifications/Notifications";
 import Staff from "./pages/Staff";
 import NotificationsPage from "./pages/Notifications";
 import NotificationDetail from "./pages/NotificationDetail";
-const About = () => <div className="p-6">About Page</div>;
+import About from "./pages/About";
 const Courses = () => <div className="p-6">Courses Page</div>;
 const Contact = () => <div className="p-6">Contact Page</div>;
 
@@ -32,6 +32,7 @@ function App() {
           <Route path="/staff" element={<Staff />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/notifications/:id" element={<NotificationDetail />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
 
