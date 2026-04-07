@@ -1,12 +1,15 @@
 import Hero from "../components/home/Hero";
 import Stats from "../components/home/Stats";
 import { Link } from "react-router-dom";
-
+import Discover from "../components/home/Discover";
+import Infrastructure from "../components/home/Infrastructure";
 const Home = () => {
   return (
     <div>
       <Hero />
       <Stats />
+      <Discover />
+      <Infrastructure />
 
       {/* About Preview */}
       <div className="max-w-6xl mx-auto px-6 py-12 text-center">
@@ -29,10 +32,10 @@ const Home = () => {
       <div className="bg-gray-100 py-12 text-center">
         <h2 className="text-2xl font-bold mb-6">Our Courses</h2>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
-          <div className="bg-white p-6 shadow rounded">
-            <h3 className="font-semibold">The Complete B.Ed. Program</h3>
-            <p className="text-gray-600">Complete teacher training program</p>
+        <div className="flex justify-center">
+          <div className="bg-white p-6 shadow w-80 text-center">
+            <h3 className="font-semibold text-lg">The Complete B.Ed. Program</h3>
+            <p className="text-gray-600 mt-2">Complete teacher training program</p>
           </div>
         </div>
       </div>
@@ -54,18 +57,6 @@ const Home = () => {
             <h4>Placement Support</h4>
           </div>
         </div>
-      </div>
-
-      {/* Notifications */}
-      <div className="bg-blue-600 text-white py-10 text-center">
-        <h2 className="text-xl font-bold">Latest Notifications</h2>
-
-        <Link
-          to="/notifications"
-          className="mt-4 inline-block bg-white text-blue-600 px-4 py-2 rounded"
-        >
-          View Notifications
-        </Link>
       </div>
 
     </div>
