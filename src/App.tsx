@@ -16,8 +16,8 @@ import Staff from "./pages/Staff";
 import NotificationsPage from "./pages/Notifications";
 import NotificationDetail from "./pages/NotificationDetail";
 import About from "./pages/About";
-import Footer from "./components/layout/Footer";
-const Courses = () => <div className="p-6">Courses Page</div>;
+import Courses from "./pages/Courses";
+import CourseDetail from "./pages/CourseDetail";
 const Contact = () => <div className="p-6">Contact Page</div>;
 
 function App() {
@@ -36,6 +36,7 @@ function App() {
             <Route path="/notifications" element={<NotificationsPage />} />
             <Route path="/notifications/:id" element={<NotificationDetail />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/courses/bed" element={<CourseDetail />} />
           </Route>
 
           {/* 🔐 Auth */}
@@ -59,10 +60,6 @@ function App() {
 
         </Routes>
       </BrowserRouter>
-
-      {/* ✅ Footer now inside parent */}
-      <Footer />
-
     </div>
   );
 }

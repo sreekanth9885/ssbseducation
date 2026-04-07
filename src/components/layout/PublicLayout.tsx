@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "./Footer";
 
 interface Notification {
   id: number;
@@ -37,6 +38,8 @@ const PublicLayout = () => {
       </div>
 
       <Outlet />
+      <Footer />
+
     </div>
   );
 };
