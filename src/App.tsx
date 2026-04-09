@@ -14,11 +14,12 @@ import AdminStaff from "./pages/admin/AdminStaff";
 import Notifications from "./pages/admin/notifications/Notifications";
 import Staff from "./pages/Staff";
 import NotificationsPage from "./pages/Notifications";
+import Contact from "./pages/Contact";
 import NotificationDetail from "./pages/NotificationDetail";
+import ContactMessages from "./pages/admin/ContactMessages";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
 import CourseDetail from "./pages/CourseDetail";
-const Contact = () => <div className="p-6">Contact Page</div>;
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
             <Route path="/admin/students" element={<AdminStudents />} />
             <Route path="/admin/staff" element={<AdminStaff />} />
             <Route path="/admin/notifications" element={<Notifications />} />
+            <Route path="/admin/contact-messages" element={<ContactMessages />} />
             <Route path="/admin/settings" element={<div>Settings</div>} />
           </Route>
 
