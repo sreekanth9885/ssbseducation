@@ -5,6 +5,7 @@ interface Notification {
   id: number;
   title: string;
   content: string;
+  file?: string;
   created_at?: string;
 }
 export default function NotificationsPage() {
@@ -39,6 +40,29 @@ export default function NotificationsPage() {
             <p className="text-gray-700 mt-1">
               {n.content}
             </p>
+
+            {n.file && (
+      <div className="mt-2">
+      <a
+      href={`https://ssbsapi.academicprojects.org/${n.file}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-blue-600 underline"
+      >
+        View File
+      </a>
+
+      <br />
+
+      <a
+      href={`https://ssbsapi.academicprojects.org/${n.file}`}
+      download
+      className="text-green-600 underline"
+      >
+          Download File
+        </a>
+        </div>
+  )}
 
             {n.created_at && (
               <p className="text-sm text-gray-400 mt-2">

@@ -11,6 +11,7 @@ export default function Notifications() {
   const API = "https://ssbsapi.academicprojects.org";
 
   const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [file, setFile] = useState<File | null>(null);
   const [form, setForm] = useState({ title: "", content: "" });
   const [editingId, setEditingId] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
@@ -27,21 +28,26 @@ export default function Notifications() {
 
   // ✅ SUBMIT (ADD + UPDATE)
   const handleSubmit = async () => {
-    if (!form.title || !form.content) {
-      alert("Please fill all fields");
-      return;
-    }
+  if (!form.title || !form.content) {
+    alert("Please fill all fields");
+    return;
+  }
 
-    if (editingId) {
-      await axios.put(`${API}/notifications/${editingId}`, form);
-    } else {
-      await axios.post(`${API}/notifications`, form);
-    }
+  const formData = new FormData();
+  formData.append("title", form.title);
+  formData.append("content", form.content);
 
-    setForm({ title: "", content: "" });
-    setEditingId(null);
-    fetchNotifications();
-  };
+  if (file) {
+    formData.append("file", file);
+  }
+
+  await axios.post(`${API}/notifications`, formData);
+
+  setForm({ title: "", content: "" });
+  setFile(null);
+  setEditingId(null);
+  fetchNotifications();
+};
 
   // ✅ DELETE
   const handleDelete = async (id: number) => {
@@ -136,6 +142,16 @@ export default function Notifications() {
               onChange={(e) =>
                 setForm({ ...form, content: e.target.value })
               }
+            />
+
+            <input
+              type="file"
+              className="border p-2 w-full mb-2"
+              onChange={(e) => {
+              if (e.target.files) {
+              setFile(e.target.files[0]);
+          }
+          }}
             />
 
             <div className="flex justify-end gap-2">
